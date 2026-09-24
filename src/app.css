@@ -1,0 +1,159 @@
+/*
+ * Temas de Nimbo. Cada tiempo (data-cond) define sus colores en variables --n-*
+ * y estas sustituyen a las variables de Bootstrap (--bs-*), así los componentes
+ * de Bootstrap cambian de color con el tiempo sin reescribirlos.
+ */
+.nimbo {
+	--n-bg: #f6e7c8;
+	--n-ink: #2e2416;
+	--n-soft: rgba(46, 36, 22, 0.72);
+	--n-card: rgba(255, 255, 255, 0.5);
+	--n-line: rgba(46, 36, 22, 0.12);
+	--n-accent: #b0703a;
+	--n-art: #e8a857;
+
+	--bs-body-color: var(--n-ink);
+	--bs-body-bg: var(--n-bg);
+	--bs-border-color: var(--n-line);
+	--bs-secondary-color: var(--n-soft);
+	--bs-emphasis-color: var(--n-ink);
+	--bs-link-color-rgb: inherit;
+
+	min-height: 100vh;
+	min-height: 100dvh;
+	background: var(--n-bg);
+	color: var(--n-ink);
+	font-family: 'DM Sans Variable', system-ui, sans-serif;
+	transition:
+		background-color 0.4s ease,
+		color 0.4s ease;
+}
+.nimbo[data-cond='nublado'] {
+	--n-bg: #dde2e7;
+	--n-ink: #1e2833;
+	--n-soft: rgba(30, 40, 51, 0.74);
+	--n-card: rgba(255, 255, 255, 0.45);
+	--n-line: rgba(30, 40, 51, 0.14);
+	--n-accent: #5b6b7f;
+	--n-art: #ffffff;
+}
+.nimbo[data-cond='lluvia'] {
+	--n-bg: #3b5566;
+	--n-ink: #eef4f8;
+	--n-soft: rgba(238, 244, 248, 0.78);
+	--n-card: rgba(255, 255, 255, 0.08);
+	--n-line: rgba(238, 244, 248, 0.16);
+	--n-accent: #a9cde0;
+	--n-art: #afc0cc;
+	color-scheme: dark;
+}
+.nimbo[data-cond='noche'] {
+	--n-bg: #1c2438;
+	--n-ink: #e9ecf5;
+	--n-soft: rgba(233, 236, 245, 0.76);
+	--n-card: rgba(255, 255, 255, 0.06);
+	--n-line: rgba(233, 236, 245, 0.14);
+	--n-accent: #e6d3a0;
+	--n-art: #e6d3a0;
+	color-scheme: dark;
+}
+.nimbo[data-cond='nieve'] {
+	--n-bg: #ebf0f5;
+	--n-ink: #15233a;
+	--n-soft: rgba(21, 35, 58, 0.74);
+	--n-card: rgba(255, 255, 255, 0.6);
+	--n-line: rgba(21, 35, 58, 0.14);
+	--n-accent: #5474a6;
+	--n-art: #c4d2e1;
+}
+
+/* El fondo de la página acompaña al tema (se ve al hacer scroll elástico) */
+body:has(.nimbo[data-cond='soleado']) { background: #f6e7c8; }
+body:has(.nimbo[data-cond='nublado']) { background: #dde2e7; }
+body:has(.nimbo[data-cond='lluvia']) { background: #3b5566; }
+body:has(.nimbo[data-cond='noche']) { background: #1c2438; }
+body:has(.nimbo[data-cond='nieve']) { background: #ebf0f5; }
+
+@media (prefers-reduced-motion: reduce) {
+	.nimbo { transition: none; }
+}
+
+.nimbo .display {
+	font-family: 'Bricolage Grotesque Variable', 'DM Sans Variable', sans-serif;
+	letter-spacing: -0.02em;
+}
+.nimbo .text-soft { color: var(--n-soft) !important; }
+.nimbo a { color: inherit; }
+
+.nimbo .card {
+	--bs-card-bg: var(--n-card);
+	--bs-card-border-color: var(--n-line);
+	--bs-card-color: var(--n-ink);
+	--bs-card-border-radius: 24px;
+	--bs-card-spacer-y: 1.5rem;
+	--bs-card-spacer-x: 1.75rem;
+}
+.nimbo .navbar {
+	--bs-navbar-color: var(--n-ink);
+	--bs-navbar-brand-color: var(--n-ink);
+	--bs-navbar-brand-hover-color: var(--n-ink);
+}
+.nimbo .list-group {
+	--bs-list-group-bg: transparent;
+	--bs-list-group-color: var(--n-ink);
+	--bs-list-group-border-color: var(--n-line);
+	--bs-list-group-action-hover-bg: var(--n-card);
+	--bs-list-group-action-hover-color: var(--n-ink);
+	--bs-list-group-action-color: var(--n-ink);
+}
+.nimbo .progress {
+	--bs-progress-bg: var(--n-line);
+	--bs-progress-bar-bg: var(--n-accent);
+	--bs-progress-height: 6px;
+	--bs-progress-border-radius: 3px;
+}
+.nimbo .alert {
+	--bs-alert-bg: var(--n-card);
+	--bs-alert-color: var(--n-ink);
+	--bs-alert-border-color: var(--n-line);
+	border-radius: 16px;
+}
+
+.nimbo .btn-nimbo {
+	--bs-btn-bg: var(--n-ink);
+	--bs-btn-color: var(--n-bg);
+	--bs-btn-border-color: var(--n-ink);
+	--bs-btn-hover-bg: var(--n-ink);
+	--bs-btn-hover-color: var(--n-bg);
+	--bs-btn-hover-border-color: var(--n-ink);
+	--bs-btn-active-bg: var(--n-ink);
+	--bs-btn-active-color: var(--n-bg);
+	--bs-btn-disabled-bg: var(--n-ink);
+	--bs-btn-disabled-color: var(--n-bg);
+	--bs-btn-disabled-border-color: var(--n-ink);
+	--bs-btn-font-weight: 600;
+	border-radius: 999px !important;
+}
+.nimbo .btn-suave {
+	--bs-btn-bg: var(--n-card);
+	--bs-btn-color: var(--n-ink);
+	--bs-btn-border-color: var(--n-line);
+	--bs-btn-hover-bg: var(--n-card);
+	--bs-btn-hover-color: var(--n-ink);
+	--bs-btn-hover-border-color: var(--n-soft);
+	--bs-btn-active-bg: var(--n-ink);
+	--bs-btn-active-color: var(--n-bg);
+	--bs-btn-active-border-color: var(--n-ink);
+	--bs-btn-disabled-bg: var(--n-card);
+	--bs-btn-disabled-color: var(--n-ink);
+	--bs-btn-disabled-border-color: var(--n-line);
+	min-width: 44px;
+	min-height: 44px;
+}
+.nimbo .btn:focus-visible,
+.nimbo .form-control:focus-visible,
+.nimbo a:focus-visible {
+	outline: 2px solid var(--n-ink);
+	outline-offset: 2px;
+	box-shadow: none;
+}
