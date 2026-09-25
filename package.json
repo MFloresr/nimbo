@@ -29,7 +29,7 @@
 	},
 	"description": "Aplicación del tiempo con SvelteKit, Bootstrap y Open-Meteo",
 	"author": "Mario Flores Rodríguez",
-	"license": "UNLICENSED",
+	"license": "MIT",
 	"engines": {
 		"node": ">=22"
 	}

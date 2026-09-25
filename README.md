@@ -56,3 +56,7 @@ npm run check     # comprobación de tipos
 ## Autor
 
 Mario Flores Rodríguez · [Portfolio](https://mfloresr-portfolio.vercel.app) · [GitHub](https://github.com/MFloresr)
+
+## Licencia
+
+[MIT](LICENSE) © 2026 Mario Flores Rodríguez. Los datos meteorológicos tienen su propia licencia (CC BY 4.0, Open-Meteo).
