@@ -126,6 +126,14 @@ describe('convertir', () => {
 		expect(t.horas[2].probLluvia).toBe(0);
 		expect(t.horas[5].icono).toBe('luna');
 	});
+	it('"Ahora" usa el icono del tiempo actual, no el de la previsión horaria', () => {
+		const nublado = convertir({
+			...respuesta,
+			current: { ...respuesta.current, weather_code: 2 }
+		});
+		expect(nublado.horas[0].icono).toBe('nube');
+		expect(nublado.horas[1].icono).toBe('sol');
+	});
 	it('nombra los días de la semana', () => {
 		expect(t.dias.map((d) => d.etiqueta)).toEqual(['Hoy', 'Jue', 'Vie', 'Sáb', 'Dom', 'Lun', 'Mar']);
 		expect(t.dias.map((d) => d.icono)).toEqual(['sol', 'nube', 'lluvia', 'sol', 'nieve', 'niebla', 'tormenta']);

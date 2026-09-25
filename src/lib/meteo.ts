@@ -209,7 +209,11 @@ export function convertir(r: RespuestaPrevision): Tiempo {
 			etiqueta: i === inicio ? 'Ahora' : partes(r.hourly.time[i]).hora,
 			temp: i === inicio ? c.temperature_2m : r.hourly.temperature_2m[i],
 			probLluvia: r.hourly.precipitation_probability[i] ?? 0,
-			icono: icono(r.hourly.weather_code[i], r.hourly.is_day[i] === 1)
+			// "Ahora" usa el dato actual, igual que la tarjeta principal
+			icono:
+				i === inicio
+					? icono(c.weather_code, deDia)
+					: icono(r.hourly.weather_code[i], r.hourly.is_day[i] === 1)
 		});
 	}
 
