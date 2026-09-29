@@ -4,6 +4,16 @@ Aplicación del tiempo hecha con SvelteKit y Bootstrap. Muestra el tiempo actual
 
 **Demo:** https://nimbo-mflores.vercel.app
 
+## Capturas
+
+<p align="center">
+  <img src="docs/capturas/madrid.png" width="640" alt="Nimbo mostrando el tiempo actual en Madrid, las próximas horas, los próximos 7 días y los datos del día">
+  <img src="docs/capturas/movil.png" width="200" alt="Nimbo en móvil, con el tiempo actual y la previsión por horas">
+</p>
+<p align="center">
+  <img src="docs/capturas/reikiavik.png" width="640" alt="Nimbo mostrando lluvia probable en Reikiavik, con la previsión de 7 días">
+</p>
+
 ## Qué hace
 
 - Busca cualquier ciudad por su nombre. Si hay varias con el mismo nombre, las ofrece como alternativas.
@@ -45,7 +55,7 @@ Requiere Node.js 22 o superior.
 ```sh
 npm install
 npm run dev       # servidor de desarrollo en http://localhost:5173
-npm test          # pruebas
+npm test          # pruebas (15 pruebas de la conversión de datos de Open-Meteo)
 npm run check     # comprobación de tipos
 ```
 
